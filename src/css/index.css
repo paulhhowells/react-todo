@@ -1,0 +1,31 @@
+html, body {margin: 0; padding: 0;}
+body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 1rem;
+  line-height: 1.25;
+  background: #eee;
+}
+
+input,
+button,
+textarea {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.visually-hidden {
+  position: absolute;
+  top: -9999rem;
+  left: -9999rem;
+  text-indent: 9999em;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}

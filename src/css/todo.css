@@ -1,0 +1,52 @@
+.todo {}
+
+.todo__add {
+  display: flex;
+  align-content: space-between;
+}
+.todo__add input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5em;
+}
+.todo__add .todo__add-button {}
+
+.todo__list {
+  margin: 1em 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo__item {
+  display: flex;
+  align-content: space-between;
+
+  justify-content: space-between;
+  align-items: center;
+  /* align-items: stretch; */
+  align-content: center;
+
+  margin: 0 0 0.5em 0;
+  padding: 0.25em 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.todo__item--done {
+  background: rgba(0, 0, 0, 0.02);
+}
+.todo__item--done .todo__item-name {
+  text-decoration: line-through;
+}
+
+.todo__item-add,
+.todo__item-remove {}
+
+.todo__item-name {
+  flex: 1 1;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0.5em;
+  text-align: left;
+}
