@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoItem from '../TodoItem/';
 
-function TodoList ({list, handleDone, handleRemove}) {
+function TodoList ({list, handleChangeDone, handleRemove}) {
   console.log(list);
 
   return (
@@ -9,8 +9,8 @@ function TodoList ({list, handleDone, handleRemove}) {
       {list.map(
         todo => <TodoItem
           key={todo.id}
-          handleDone={() => handleDone(todo.id)}
           handleRemove={() => handleRemove(todo.id)}
+          handleChangeDone={() => handleChangeDone(todo.id)}
           {...todo}
         />
       )}

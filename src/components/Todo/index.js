@@ -29,16 +29,20 @@ function Todo () {
     );
   }
 
-  function handleDone (id) {
-    // todo: refactor this?
+  function handleChangeDone (id) {
     const index = list.findIndex(item => item.id === id);
 
     if (index >= 0) {
-      setList([
-        ...list.slice(0, index),
-        { ...list[index], done: true },
-        ...list.slice(index + 1)
-      ]);
+      setList(
+        previousList => [
+          ...list.slice(0, index),
+          {
+            ...previousList[index],
+            done: !previousList[index].done
+          },
+          ...previousList.slice(index + 1)
+        ]
+      );
     }
   }
 
@@ -47,8 +51,8 @@ function Todo () {
       <TodoAdd add={add} />
       <TodoList
         list={list}
-        handleDone={handleDone}
         handleRemove={handleRemove}
+        handleChangeDone={handleChangeDone}
       />
     </div>
   );

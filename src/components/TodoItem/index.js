@@ -1,28 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Toggle from '../Toggle/';
 
 function TodoItem ({
+  id,
   name,
   done,
-  handleDone,
+  handleChangeDone,
   handleRemove,
   className='',
   children,
   ...props
 }) {
-  className = `todo__item ${done && 'todo__item--done'} ${className}`;
+  className = `todo__item ${done ? 'todo__item--done' : ''} ${className}`;
 
   return (
     <li className={className} {...props}>
-      {!done && (
-        <button
-          className="todo__item-add"
-          onClick={handleDone}
-          type="button">
-          done
-        </button>
-      )}
-      <span className="todo__item-name">{name} {children}</span>
+      <Toggle
+        id={id}
+        className="todo__item-add"
+        checked={done}
+        handleChange={handleChangeDone}
+      />
+      <label
+        htmlFor={id}
+        className="todo__item-name"
+      >
+        {name} {children}
+      </label>
       <button
         className="todo__item-remove"
         onClick={handleRemove}
@@ -34,7 +39,7 @@ function TodoItem ({
 TodoItem.propTypes = {
   name: PropTypes.string,
   done: PropTypes.bool,
-  handleDone: PropTypes.func,
+  handleChangeDone: PropTypes.func,
   handleRemove: PropTypes.func,
   className: PropTypes.string,
 };
