@@ -30,6 +30,7 @@ function TodoAdd (props) {
         type="text"
         value={value}
         onChange={handleChange}
+        placeholder="enter a new todo"
       />
       <button type="submit" className="todo__add-button">Add</button>
     </form>
