@@ -8,6 +8,8 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0.5em;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 .todo__add .todo__add-button {}
 
@@ -20,16 +22,15 @@
 .todo__item {
   display: flex;
   align-content: space-between;
-
   justify-content: space-between;
-  align-items: center;
-  /* align-items: stretch; */
+  /* align-items: center; */
+  align-items: stretch;
   align-content: center;
 
   margin: 0 0 0.5em 0;
-  padding: 0.25em 0.5em;
+  padding: 0 0 0 0.5em;
   border: 1px solid #ccc;
-  border-radius: 0.5em;
+  border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.8);
 }
 
@@ -40,13 +41,37 @@
   text-decoration: line-through;
 }
 
-.todo__item-add,
-.todo__item-remove {}
+.todo__item-remove {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-left: 1px solid #ddd;
+  border-radius: 0 0.4375rem 0.4375rem 0;
+  background: #fcfcfc;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.09),
+      rgba(0, 0, 0, 0)
+    );
+}
+
+.todo__item-toggle {
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 0 0.25em;
+}
 
 .todo__item-name {
   flex: 1 1;
   box-sizing: border-box;
   display: inline-block;
-  padding: 0.5em;
+  padding: 0.125em 0.125em 0.125em 0.5em;
+
   text-align: left;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1.25;
+  color: #444;
 }
