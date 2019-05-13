@@ -18,7 +18,7 @@ function TodoItem ({
     <li className={className} {...props}>
       <Toggle
         id={id}
-        className="todo__item-add"
+        className="todo__item-toggle"
         checked={done}
         handleChange={handleChangeDone}
       />
