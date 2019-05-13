@@ -24,8 +24,10 @@
 }
 
 .Toggle input[type="checkbox"]:focus {
-  /* a visible focus state in Windows high contrast mode */
+  /*
+  a visible focus state in Windows high contrast mode
   outline: 0.25rem solid transparent;
+  */
   outline-offset: 0.125rem;
 }
 
